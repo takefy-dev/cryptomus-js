@@ -1,0 +1,59 @@
+{
+  "name": "cryptomus-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for the Cryptomus payment system API",
+  "type": "module",
+  "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun run build.ts",
+    "prepublishOnly": "bun run build",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check --write ."
+  },
+  "keywords": [
+    "cryptomus",
+    "payment",
+    "cryptocurrency",
+    "crypto",
+    "payment-gateway",
+    "typescript",
+    "sdk"
+  ],
+  "author": "0xJord4n <contact@0xjordan.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xjord4n/cryptomus-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0xjord4n/cryptomus-sdk/issues"
+  },
+  "homepage": "https://github.com/0xjord4n/cryptomus-sdk#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.3.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
