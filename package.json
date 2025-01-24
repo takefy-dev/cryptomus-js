@@ -1,5 +1,5 @@
 {
-  "name": "cryptomus-sdk",
+  "name": "cryptomus-js",
   "version": "1.0.0",
   "description": "TypeScript SDK for the Cryptomus payment system API",
   "type": "module",
@@ -39,12 +39,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xjord4n/cryptomus-sdk.git"
+    "url": "git+https://github.com/0xjord4n/cryptomus-js.git"
   },
   "bugs": {
-    "url": "https://github.com/0xjord4n/cryptomus-sdk/issues"
+    "url": "https://github.com/0xjord4n/cryptomus-js/issues"
   },
-  "homepage": "https://github.com/0xjord4n/cryptomus-sdk#readme",
+  "homepage": "https://github.com/0xjord4n/cryptomus-js#readme",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/bun": "latest",

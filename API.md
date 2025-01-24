@@ -12,7 +12,7 @@
 Initialize the client with your Cryptomus credentials:
 
 ```typescript
-import { CryptomusClient } from "cryptomus-sdk";
+import { CryptomusClient } from "cryptomus-js";
 
 const client = new CryptomusClient({
   merchantId: "your-merchant-id",

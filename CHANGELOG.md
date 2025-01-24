@@ -18,4 +18,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Biome for code formatting and linting
 - MIT License
 
-[1.0.0]: https://github.com/0xjord4n/cryptomus-sdk/releases/tag/v1.0.0
+[1.0.0]: https://github.com/0xjord4n/cryptomus-js/releases/tag/v1.0.0
