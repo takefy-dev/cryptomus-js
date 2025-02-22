@@ -1,0 +1,22 @@
+# Source
+src/
+tests/
+build.ts
+
+# Config files
+tsconfig.json
+biome.json
+.env*
+.gitignore
+.github/
+
+# Development files
+*.test.ts
+*.spec.ts
+coverage/
+.vscode/
+.idea/
+
+# Misc
+*.log
+.DS_Store 

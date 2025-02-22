@@ -17,7 +17,7 @@ describe("PaymentsService", () => {
 				url_callback: "https://your-callback-url.com/webhook",
 				url_return: "https://your-site.com/success",
 				url_success: "https://your-site.com/success",
-				is_payment_multiple: "false",
+				is_payment_multiple: false,
 				lifetime: 3600,
 				currencies: [
 					{ currency: "USDT", network: "TRX" },
