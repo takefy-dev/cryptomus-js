@@ -1,4 +1,7 @@
 import { CryptomusClient } from "./index";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function test() {
 	// Initialize the client
@@ -17,10 +20,10 @@ async function test() {
 			amount: "100",
 			currency: "USD",
 			order_id: `test-${Date.now()}`,
-			url_callback: "https://your-callback-url.com/webhook",
-			url_return: "https://your-site.com/success",
-			url_success: "https://your-site.com/success",
-			is_payment_multiple: "false",
+			url_callback: "https://Your-site.com/webhook",
+			url_return: "https://Your-site.com/success",
+			url_success: "https://Your-site.com/success",
+			is_payment_multiple: false,
 			lifetime: 3600,
 			currencies: [
 				{ currency: "USDT", network: "TRX" },
@@ -42,8 +45,8 @@ async function test() {
 
 		// Test payment history
 		const paymentHistory = await client.payments.getHistory({
-			date_from: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(), // Last 24 hours
-			date_to: new Date().toISOString(),
+			date_from: new Date(Date.now() - 24 * 60 * 60 * 1000).toLocaleString("sv").replace("T", " "), // Last 24 hours
+			date_to: new Date().toLocaleString("sv").replace("T", " "),
 		});
 		console.log("Payment history:", paymentHistory);
 
@@ -56,8 +59,8 @@ async function test() {
 
 		// Set discount
 		const setDiscountResult = await client.payments.setDiscount({
-			currency: "USDT",
-			network: "TRX",
+			currency: paymentServices[0].currency,
+			network: paymentServices[0].network,
 			discount_percent: 5,
 		});
 		console.log("Set discount result:", setDiscountResult);
@@ -67,8 +70,8 @@ async function test() {
 
 		// Create wallet
 		const wallet = await client.payments.createWallet({
-			currency: "USDT",
-			network: "TRX",
+			currency: paymentServices[0].currency,
+			network: paymentServices[0].network,
 			order_id: `wallet-${Date.now()}`,
 		});
 		console.log("Created wallet:", wallet);
@@ -141,6 +144,6 @@ async function test() {
 }
 
 // Run the test if this file is executed directly
-if (require.main === module) {
+// if (require.main === module) {
 	test().catch(console.error);
-}
+// }

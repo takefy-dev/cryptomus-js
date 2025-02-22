@@ -87,8 +87,7 @@ export abstract class BaseService {
 		payload?: Record<string, any>,
 		isPayment = true,
 	): Promise<T> {
-		const body = payload ? JSON.stringify(payload) : undefined;
-
+		const body = payload ? JSON.stringify(payload) : '{}';
 		const headers = {
 			"Content-Type": "application/json",
 			merchant: this.merchantId,
@@ -102,6 +101,10 @@ export abstract class BaseService {
 		});
 
 		if (!response.ok) {
+			if (response.status === 422) {
+				const data = (await response.json()) as ApiResponse<T>;
+				throw new Error(JSON.stringify(data));
+			}
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}
 

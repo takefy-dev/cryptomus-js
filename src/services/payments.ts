@@ -220,8 +220,8 @@ export class PaymentsService extends BaseService {
 	 * const services = await payments.listServices();
 	 * ```
 	 */
-	async listServices(): Promise<ListServicesResponse> {
-		return this.request<ListServicesResponse>("/payment/services", "POST");
+	async listServices(): Promise<ListServicesResponse[]> {
+		return this.request<ListServicesResponse[]>("/payment/services", "POST");
 	}
 
 	/**

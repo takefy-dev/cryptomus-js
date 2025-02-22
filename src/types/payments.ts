@@ -28,7 +28,7 @@ export interface CreatePaymentRequest {
 	url_callback?: string;
 	url_return?: string;
 	url_success?: string;
-	is_payment_multiple?: "true" | "false";
+	is_payment_multiple?: boolean;
 	lifetime?: number;
 	to_currency?: string;
 	subtract?: number;
